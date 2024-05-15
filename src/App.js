@@ -15,7 +15,7 @@ const App = () => {
 
   // Fetch banks data on component mount
   useEffect(() => {
-    axios.get('http://bank-search-api.vercel.app/banks')
+    axios.get('https://bank-search-api.vercel.app/banks')
       .then(response => {
         setBanks(response.data);
       })
@@ -31,7 +31,7 @@ const App = () => {
   const handleSearch = () => {
     if (selectedBank) {
       setLoading(true);
-      axios.get(`http://bank-search-api.vercel.app/branches/${selectedBank}`)
+      axios.get(`https://bank-search-api.vercel.app/branches/${selectedBank}`)
         .then(response => {
           setBranches(response.data);
           setCurrentPage(1); // Reset to first page on new search
